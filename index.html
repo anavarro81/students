@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    
+
+    <header>
+        
+        <nav>
+          <a href="Students.html">Ver Alumnos</a>
+          <a href="">Nuevo Alumno</a>         
+          
+        </nav>
+      </header>
+
+
+      <div class="container"> 
+
+
+      <h1> Nuevo Alumno </h1>
+
+    <form action="" id="registerForm"> 
+        
+
+        
+            <label for="name"> Nombre </label>
+            <input type="text" name="name" id="name">
+
+            <label for="surname">Apellidos </label>
+            <input type="text" name="surname" id="surname">
+        
+            <label for="email"> Email </label>
+            <input type="email" name='email' id="email"> 
+
+            <label for="phone"> phone </label>
+            <input type="tel" name='phone' id="phone" > 
+
+
+            <label for="password"> password </label>            
+            <input type="password" name='password' id="password">   
+            
+            <p> Nota Final </p>
+            <div> 
+                <input type="radio" id="passExam" name="qualification" value="true">
+                <label for="passExam"> Aprobado </label><br>
+                
+                <input type="radio" id="failExam" name="qualification" value="false">
+                <label for="failExam"> Suspenso </label><br>
+            </div>
+
+            
+            
+
+        <button type="submit"> Enviar </button>
+
+    </form>
+
+    <button id="autoFill"> Rellenar </button>
+
+    <button id="deleteLocalStore"> Borrar LS </button>
+
+
+
+    <div id="confirmation">
+
+        
+
+    </div>
+
+</div>
+
+
+
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
