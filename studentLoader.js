@@ -14,7 +14,7 @@ const tableHTMLStart = `
 
 const students = localStorage.getItem('students');
 const studentsArray = JSON.parse(students); 
-
+let prevBtnId = ""
 
 function failExam(id) {
 
@@ -64,6 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 
                 const id =   event.target.id 
+
+                console.log('id: ', id);
+                console.log('prevBtnId: ', prevBtnId);
+
+                
                 
         // Muetra | Oculta la info del estudiante segun tenga o no las clases hide | show. 
         // Cambiar el texto del boton entre "Mostrar" y "Ocultar" segun corresponda.         
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 
                     console.log('button.innerHTML>', button.innerHTML);
+
+                    console.log(typeof prevBtnId);
+                    console.log('id: ', id )
+                    console.log('prevBtnId: ', prevBtnId)
+
+
+                    if (id != prevBtnId) {                                              
+                        
+                        if (prevBtnId > "") {
+                            const prevBtn$$ = document.getElementById(prevBtnId)
+                            prevBtn$$.innerHTML = 'Mostrar'     
+                        }
+                        prevBtnId = id
+                        
+                    }
                     
                     if (button.innerHTML == 'Mostrar') {
 
@@ -83,7 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             studentInfo$$.classList.remove('hide')
                             studentInfo$$.classList.add('visible')
                             button.innerHTML = 'Ocultar'
+                        } else {
+                            button.innerHTML = 'Ocultar'
                         }
+
+
                     } else {
                         studentInfo$$.classList.remove('visible')
                         studentInfo$$.classList.add('hide')
